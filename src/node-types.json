@@ -18,7 +18,7 @@
         "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word",
             "named": true
           }
         ]
@@ -28,7 +28,7 @@
         "required": false,
         "types": [
           {
-            "type": "key_val_options",
+            "type": "bracket_group_key_value",
             "named": true
           }
         ]
@@ -232,7 +232,7 @@
         "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word",
             "named": true
           }
         ]
@@ -242,7 +242,7 @@
         "required": false,
         "types": [
           {
-            "type": "key_val_options",
+            "type": "bracket_group_key_value",
             "named": true
           }
         ]
@@ -268,7 +268,7 @@
         "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word",
             "named": true
           }
         ]
@@ -304,17 +304,17 @@
         "required": false,
         "types": [
           {
-            "type": "key_val_options",
+            "type": "bracket_group_key_value",
             "named": true
           }
         ]
       },
-      "path": {
-        "multiple": true,
-        "required": false,
+      "paths": {
+        "multiple": false,
+        "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word_list",
             "named": true
           }
         ]
@@ -335,12 +335,12 @@
           }
         ]
       },
-      "path": {
-        "multiple": true,
-        "required": false,
+      "paths": {
+        "multiple": false,
+        "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word_list",
             "named": true
           }
         ]
@@ -420,10 +420,6 @@
             "named": true
           },
           {
-            "type": "equation_label_reference",
-            "named": true
-          },
-          {
             "type": "generic_command",
             "named": true
           },
@@ -472,10 +468,6 @@
             "named": true
           },
           {
-            "type": "latex_input",
-            "named": true
-          },
-          {
             "type": "math_operator",
             "named": true
           },
@@ -492,7 +484,7 @@
             "named": true
           },
           {
-            "type": "param",
+            "type": "parameter",
             "named": true
           },
           {
@@ -540,24 +532,52 @@
             "named": true
           }
         ]
-      },
-      "left": {
-        "multiple": false,
-        "required": true,
+      }
+    }
+  },
+  {
+    "type": "brace_group_key_value",
+    "named": true,
+    "fields": {
+      "property": {
+        "multiple": true,
+        "required": false,
         "types": [
           {
-            "type": "{",
-            "named": false
+            "type": "key_value_pair",
+            "named": true
           }
         ]
-      },
-      "right": {
+      }
+    }
+  },
+  {
+    "type": "brace_group_word",
+    "named": true,
+    "fields": {
+      "word": {
         "multiple": false,
         "required": true,
         "types": [
           {
-            "type": "}",
-            "named": false
+            "type": "word",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "brace_group_word_list",
+    "named": true,
+    "fields": {
+      "word": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "word",
+            "named": true
           }
         ]
       }
@@ -636,10 +656,6 @@
             "named": true
           },
           {
-            "type": "equation_label_reference",
-            "named": true
-          },
-          {
             "type": "generic_command",
             "named": true
           },
@@ -688,10 +704,6 @@
             "named": true
           },
           {
-            "type": "latex_input",
-            "named": true
-          },
-          {
             "type": "math_operator",
             "named": true
           },
@@ -708,7 +720,7 @@
             "named": true
           },
           {
-            "type": "param",
+            "type": "parameter",
             "named": true
           },
           {
@@ -756,24 +768,36 @@
             "named": true
           }
         ]
-      },
-      "left": {
-        "multiple": false,
-        "required": true,
+      }
+    }
+  },
+  {
+    "type": "bracket_group_key_value",
+    "named": true,
+    "fields": {
+      "property": {
+        "multiple": true,
+        "required": false,
         "types": [
           {
-            "type": "[",
-            "named": false
+            "type": "key_value_pair",
+            "named": true
           }
         ]
-      },
-      "right": {
+      }
+    }
+  },
+  {
+    "type": "bracket_group_word",
+    "named": true,
+    "fields": {
+      "word": {
         "multiple": false,
         "required": true,
         "types": [
           {
-            "type": "]",
-            "named": false
+            "type": "word",
+            "named": true
           }
         ]
       }
@@ -884,10 +908,6 @@
             "named": true
           },
           {
-            "type": "equation_label_reference",
-            "named": true
-          },
-          {
             "type": "generic_command",
             "named": true
           },
@@ -936,10 +956,6 @@
             "named": true
           },
           {
-            "type": "latex_input",
-            "named": true
-          },
-          {
             "type": "math_operator",
             "named": true
           },
@@ -956,7 +972,7 @@
             "named": true
           },
           {
-            "type": "param",
+            "type": "parameter",
             "named": true
           },
           {
@@ -1257,12 +1273,12 @@
           }
         ]
       },
-      "key": {
-        "multiple": true,
-        "required": false,
+      "keys": {
+        "multiple": false,
+        "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word_list",
             "named": true
           }
         ]
@@ -1308,17 +1324,17 @@
         "required": false,
         "types": [
           {
-            "type": "key_val_options",
+            "type": "bracket_group_key_value",
             "named": true
           }
         ]
       },
-      "path": {
-        "multiple": true,
-        "required": false,
+      "paths": {
+        "multiple": false,
+        "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word_list",
             "named": true
           }
         ]
@@ -1344,7 +1360,7 @@
         "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word",
             "named": true
           }
         ]
@@ -1354,7 +1370,7 @@
         "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word",
             "named": true
           }
         ]
@@ -1402,7 +1418,7 @@
         "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word",
             "named": true
           }
         ]
@@ -1433,12 +1449,12 @@
           }
         ]
       },
-      "model": {
-        "multiple": true,
-        "required": false,
+      "models": {
+        "multiple": false,
+        "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word_list",
             "named": true
           }
         ]
@@ -1468,7 +1484,7 @@
         "required": false,
         "types": [
           {
-            "type": "word",
+            "type": "bracket_group_word",
             "named": true
           }
         ]
@@ -1606,10 +1622,6 @@
             "named": true
           },
           {
-            "type": "equation_label_reference",
-            "named": true
-          },
-          {
             "type": "generic_command",
             "named": true
           },
@@ -1658,10 +1670,6 @@
             "named": true
           },
           {
-            "type": "latex_input",
-            "named": true
-          },
-          {
             "type": "math_operator",
             "named": true
           },
@@ -1678,7 +1686,7 @@
             "named": true
           },
           {
-            "type": "param",
+            "type": "parameter",
             "named": true
           },
           {
@@ -1724,34 +1732,6 @@
           {
             "type": "verbatim_include",
             "named": true
-          }
-        ]
-      },
-      "left": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "$$",
-            "named": false
-          },
-          {
-            "type": "\\[",
-            "named": false
-          }
-        ]
-      },
-      "right": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "$$",
-            "named": false
-          },
-          {
-            "type": "\\]",
-            "named": false
           }
         ]
       }
@@ -1830,10 +1810,6 @@
           "named": true
         },
         {
-          "type": "equation_label_reference",
-          "named": true
-        },
-        {
           "type": "generic_command",
           "named": true
         },
@@ -1882,10 +1858,6 @@
           "named": true
         },
         {
-          "type": "latex_input",
-          "named": true
-        },
-        {
           "type": "math_operator",
           "named": true
         },
@@ -1902,7 +1874,7 @@
           "named": true
         },
         {
-          "type": "param",
+          "type": "parameter",
           "named": true
         },
         {
@@ -1971,7 +1943,7 @@
         "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word",
             "named": true
           }
         ]
@@ -2043,10 +2015,6 @@
             "named": true
           },
           {
-            "type": "equation_label_reference",
-            "named": true
-          },
-          {
             "type": "generic_command",
             "named": true
           },
@@ -2095,10 +2063,6 @@
             "named": true
           },
           {
-            "type": "latex_input",
-            "named": true
-          },
-          {
             "type": "math_operator",
             "named": true
           },
@@ -2111,7 +2075,7 @@
             "named": true
           },
           {
-            "type": "param",
+            "type": "parameter",
             "named": true
           },
           {
@@ -2245,10 +2209,6 @@
             "named": true
           },
           {
-            "type": "equation_label_reference",
-            "named": true
-          },
-          {
             "type": "generic_command",
             "named": true
           },
@@ -2297,10 +2257,6 @@
             "named": true
           },
           {
-            "type": "latex_input",
-            "named": true
-          },
-          {
             "type": "math_operator",
             "named": true
           },
@@ -2317,7 +2273,7 @@
             "named": true
           },
           {
-            "type": "param",
+            "type": "parameter",
             "named": true
           },
           {
@@ -2379,32 +2335,6 @@
     }
   },
   {
-    "type": "equation_label_reference",
-    "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "\\eqref",
-            "named": false
-          }
-        ]
-      },
-      "label": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": "word",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
     "type": "generic_command",
     "named": true,
     "fields": {
@@ -2457,17 +2387,17 @@
         "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word",
             "named": true
           }
         ]
       },
-      "property": {
-        "multiple": true,
-        "required": false,
+      "properties": {
+        "multiple": false,
+        "required": true,
         "types": [
           {
-            "type": "key_val_pair",
+            "type": "brace_group_key_value",
             "named": true
           }
         ]
@@ -2673,7 +2603,7 @@
         "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word",
             "named": true
           }
         ]
@@ -2683,7 +2613,7 @@
         "required": false,
         "types": [
           {
-            "type": "key_val_options",
+            "type": "bracket_group_key_value",
             "named": true
           }
         ]
@@ -2709,17 +2639,17 @@
         "required": false,
         "types": [
           {
-            "type": "key_val_options",
+            "type": "bracket_group_key_value",
             "named": true
           }
         ]
       },
-      "path": {
-        "multiple": true,
-        "required": false,
+      "paths": {
+        "multiple": false,
+        "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word_list",
             "named": true
           }
         ]
@@ -2765,7 +2695,7 @@
         "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word",
             "named": true
           }
         ]
@@ -2775,7 +2705,7 @@
         "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word",
             "named": true
           }
         ]
@@ -2801,17 +2731,17 @@
         "required": false,
         "types": [
           {
-            "type": "key_val_options",
+            "type": "bracket_group_key_value",
             "named": true
           }
         ]
       },
-      "path": {
-        "multiple": true,
-        "required": false,
+      "paths": {
+        "multiple": false,
+        "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word_list",
             "named": true
           }
         ]
@@ -2891,10 +2821,6 @@
             "named": true
           },
           {
-            "type": "equation_label_reference",
-            "named": true
-          },
-          {
             "type": "generic_command",
             "named": true
           },
@@ -2943,10 +2869,6 @@
             "named": true
           },
           {
-            "type": "latex_input",
-            "named": true
-          },
-          {
             "type": "math_operator",
             "named": true
           },
@@ -2963,7 +2885,7 @@
             "named": true
           },
           {
-            "type": "param",
+            "type": "parameter",
             "named": true
           },
           {
@@ -3011,75 +2933,26 @@
             "named": true
           }
         ]
-      },
-      "left": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "$",
-            "named": false
-          },
-          {
-            "type": "\\(",
-            "named": false
-          }
-        ]
-      },
-      "right": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "$",
-            "named": false
-          },
-          {
-            "type": "\\)",
-            "named": false
-          }
-        ]
       }
     }
   },
   {
-    "type": "key_val_options",
+    "type": "key",
     "named": true,
-    "fields": {
-      "left": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "[",
-            "named": false
-          }
-        ]
-      },
-      "property": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "key_val_pair",
-            "named": true
-          }
-        ]
-      },
-      "right": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "]",
-            "named": false
-          }
-        ]
-      }
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "word",
+          "named": true
+        }
+      ]
     }
   },
   {
-    "type": "key_val_pair",
+    "type": "key_value_pair",
     "named": true,
     "fields": {
       "equals": {
@@ -3093,11 +2966,11 @@
         ]
       },
       "key": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "key",
             "named": true
           }
         ]
@@ -3171,10 +3044,6 @@
             "named": true
           },
           {
-            "type": "equation_label_reference",
-            "named": true
-          },
-          {
             "type": "generic_command",
             "named": true
           },
@@ -3223,10 +3092,6 @@
             "named": true
           },
           {
-            "type": "latex_input",
-            "named": true
-          },
-          {
             "type": "math_operator",
             "named": true
           },
@@ -3243,7 +3108,7 @@
             "named": true
           },
           {
-            "type": "param",
+            "type": "parameter",
             "named": true
           },
           {
@@ -3313,7 +3178,7 @@
         "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word",
             "named": true
           }
         ]
@@ -3339,7 +3204,7 @@
         "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word",
             "named": true
           }
         ]
@@ -3389,6 +3254,10 @@
             "named": false
           },
           {
+            "type": "\\eqref",
+            "named": false
+          },
+          {
             "type": "\\labelcpageref",
             "named": false
           },
@@ -3435,11 +3304,11 @@
         ]
       },
       "label": {
-        "multiple": true,
-        "required": false,
+        "multiple": false,
+        "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word_list",
             "named": true
           }
         ]
@@ -3477,7 +3346,7 @@
         "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word",
             "named": true
           }
         ]
@@ -3487,7 +3356,7 @@
         "required": false,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word",
             "named": true
           }
         ]
@@ -3507,47 +3376,25 @@
             "named": false
           },
           {
-            "type": "\\subfileinclude",
-            "named": false
-          }
-        ]
-      },
-      "path": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "word",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "latex_input",
-    "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
             "type": "\\input",
             "named": false
           },
           {
             "type": "\\subfile",
             "named": false
+          },
+          {
+            "type": "\\subfileinclude",
+            "named": false
           }
         ]
       },
-      "path": {
-        "multiple": true,
-        "required": false,
+      "paths": {
+        "multiple": false,
+        "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word_list",
             "named": true
           }
         ]
@@ -3667,10 +3514,6 @@
             "named": true
           },
           {
-            "type": "equation_label_reference",
-            "named": true
-          },
-          {
             "type": "generic_command",
             "named": true
           },
@@ -3719,10 +3562,6 @@
             "named": true
           },
           {
-            "type": "latex_input",
-            "named": true
-          },
-          {
             "type": "math_operator",
             "named": true
           },
@@ -3739,7 +3578,7 @@
             "named": true
           },
           {
-            "type": "param",
+            "type": "parameter",
             "named": true
           },
           {
@@ -3787,34 +3626,6 @@
             "named": true
           }
         ]
-      },
-      "left": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "(",
-            "named": false
-          },
-          {
-            "type": "[",
-            "named": false
-          }
-        ]
-      },
-      "right": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": ")",
-            "named": false
-          },
-          {
-            "type": "]",
-            "named": false
-          }
-        ]
       }
     }
   },
@@ -3841,17 +3652,17 @@
         "required": false,
         "types": [
           {
-            "type": "key_val_options",
+            "type": "bracket_group_key_value",
             "named": true
           }
         ]
       },
-      "path": {
-        "multiple": true,
-        "required": false,
+      "paths": {
+        "multiple": false,
+        "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word_list",
             "named": true
           }
         ]
@@ -3927,10 +3738,6 @@
             "named": true
           },
           {
-            "type": "equation_label_reference",
-            "named": true
-          },
-          {
             "type": "generic_command",
             "named": true
           },
@@ -3979,10 +3786,6 @@
             "named": true
           },
           {
-            "type": "latex_input",
-            "named": true
-          },
-          {
             "type": "math_operator",
             "named": true
           },
@@ -3995,7 +3798,7 @@
             "named": true
           },
           {
-            "type": "param",
+            "type": "parameter",
             "named": true
           },
           {
@@ -4127,10 +3930,6 @@
             "named": true
           },
           {
-            "type": "equation_label_reference",
-            "named": true
-          },
-          {
             "type": "generic_command",
             "named": true
           },
@@ -4179,10 +3978,6 @@
             "named": true
           },
           {
-            "type": "latex_input",
-            "named": true
-          },
-          {
             "type": "math_operator",
             "named": true
           },
@@ -4199,7 +3994,7 @@
             "named": true
           },
           {
-            "type": "param",
+            "type": "parameter",
             "named": true
           },
           {
@@ -4245,26 +4040,6 @@
           {
             "type": "verbatim_include",
             "named": true
-          }
-        ]
-      },
-      "left": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "(",
-            "named": false
-          }
-        ]
-      },
-      "right": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": ")",
-            "named": false
           }
         ]
       }
@@ -4343,10 +4118,6 @@
             "named": true
           },
           {
-            "type": "equation_label_reference",
-            "named": true
-          },
-          {
             "type": "generic_command",
             "named": true
           },
@@ -4395,10 +4166,6 @@
             "named": true
           },
           {
-            "type": "latex_input",
-            "named": true
-          },
-          {
             "type": "math_operator",
             "named": true
           },
@@ -4415,7 +4182,7 @@
             "named": true
           },
           {
-            "type": "param",
+            "type": "parameter",
             "named": true
           },
           {
@@ -4501,11 +4268,11 @@
         ]
       },
       "name": {
-        "multiple": true,
-        "required": false,
+        "multiple": false,
+        "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word_list",
             "named": true
           }
         ]
@@ -4581,10 +4348,6 @@
             "named": true
           },
           {
-            "type": "equation_label_reference",
-            "named": true
-          },
-          {
             "type": "generic_command",
             "named": true
           },
@@ -4633,10 +4396,6 @@
             "named": true
           },
           {
-            "type": "latex_input",
-            "named": true
-          },
-          {
             "type": "math_operator",
             "named": true
           },
@@ -4653,7 +4412,7 @@
             "named": true
           },
           {
-            "type": "param",
+            "type": "parameter",
             "named": true
           },
           {
@@ -4789,10 +4548,6 @@
             "named": true
           },
           {
-            "type": "equation_label_reference",
-            "named": true
-          },
-          {
             "type": "generic_command",
             "named": true
           },
@@ -4841,10 +4596,6 @@
             "named": true
           },
           {
-            "type": "latex_input",
-            "named": true
-          },
-          {
             "type": "math_operator",
             "named": true
           },
@@ -4857,7 +4608,7 @@
             "named": true
           },
           {
-            "type": "param",
+            "type": "parameter",
             "named": true
           },
           {
@@ -4981,10 +4732,6 @@
             "named": true
           },
           {
-            "type": "equation_label_reference",
-            "named": true
-          },
-          {
             "type": "generic_command",
             "named": true
           },
@@ -5033,10 +4780,6 @@
             "named": true
           },
           {
-            "type": "latex_input",
-            "named": true
-          },
-          {
             "type": "math_operator",
             "named": true
           },
@@ -5053,7 +4796,7 @@
             "named": true
           },
           {
-            "type": "param",
+            "type": "parameter",
             "named": true
           },
           {
@@ -5185,10 +4928,6 @@
             "named": true
           },
           {
-            "type": "equation_label_reference",
-            "named": true
-          },
-          {
             "type": "generic_command",
             "named": true
           },
@@ -5237,10 +4976,6 @@
             "named": true
           },
           {
-            "type": "latex_input",
-            "named": true
-          },
-          {
             "type": "math_operator",
             "named": true
           },
@@ -5257,7 +4992,7 @@
             "named": true
           },
           {
-            "type": "param",
+            "type": "parameter",
             "named": true
           },
           {
@@ -5335,17 +5070,17 @@
         "required": false,
         "types": [
           {
-            "type": "key_val_options",
+            "type": "bracket_group_key_value",
             "named": true
           }
         ]
       },
-      "path": {
-        "multiple": true,
-        "required": false,
+      "paths": {
+        "multiple": false,
+        "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word_list",
             "named": true
           }
         ]
@@ -5390,7 +5125,17 @@
         "required": false,
         "types": [
           {
-            "type": "word",
+            "type": "bracket_group_word",
+            "named": true
+          }
+        ]
+      },
+      "description": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "brace_group",
             "named": true
           }
         ]
@@ -5400,17 +5145,17 @@
         "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word",
             "named": true
           }
         ]
       },
-      "title": {
+      "structure": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
-            "type": "brace_group",
+            "type": "bracket_group_word",
             "named": true
           }
         ]
@@ -5432,11 +5177,11 @@
         ]
       },
       "name": {
-        "multiple": true,
-        "required": false,
+        "multiple": false,
+        "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word_list",
             "named": true
           }
         ]
@@ -5461,12 +5206,12 @@
           }
         ]
       },
-      "path": {
-        "multiple": true,
-        "required": false,
+      "paths": {
+        "multiple": false,
+        "required": true,
         "types": [
           {
-            "type": "word",
+            "type": "brace_group_word_list",
             "named": true
           }
         ]
@@ -6422,7 +6167,7 @@
     "named": true
   },
   {
-    "type": "param",
+    "type": "parameter",
     "named": true
   },
   {
