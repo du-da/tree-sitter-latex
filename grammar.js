@@ -397,12 +397,12 @@ module.exports = grammar({
 
     displayed_equation: $ =>
       prec.left(
-        seq(choice('$$', '\\['), repeat($._root_content), choice('$$', '\\]'))
+        seq(choice('$$', '\\['), /([^\\$]|\\+[^\\\]]|\$[^\$])*\\*(\\\]|\$\$)/)
       ),
 
     inline_formula: $ =>
       prec.left(
-        seq(choice('$', '\\('), repeat($._root_content), choice('$', '\\)'))
+        seq(choice('$', '\\('), /([^\\$]|\\+[^\\\)])*\\*(\\\)|\$)/)
       ),
 
     math_set: $ => seq('\\{', repeat($._root_content), '\\}'),

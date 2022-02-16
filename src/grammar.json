@@ -1896,24 +1896,8 @@
             ]
           },
           {
-            "type": "REPEAT",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_root_content"
-            }
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "$$"
-              },
-              {
-                "type": "STRING",
-                "value": "\\]"
-              }
-            ]
+            "type": "PATTERN",
+            "value": "([^\\\\$]|\\\\+[^\\\\\\]]|\\$[^\\$])*\\\\*(\\\\\\]|\\$\\$)"
           }
         ]
       }
@@ -1938,24 +1922,8 @@
             ]
           },
           {
-            "type": "REPEAT",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_root_content"
-            }
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "$"
-              },
-              {
-                "type": "STRING",
-                "value": "\\)"
-              }
-            ]
+            "type": "PATTERN",
+            "value": "([^\\\\$]|\\\\+[^\\\\\\)])*\\\\*(\\\\\\)|\\$)"
           }
         ]
       }
